@@ -1,35 +1,49 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Portofolio Dika</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <header class="hero">
-    <h1>Halo, saya <span class="highlight">Dika</span> 👋</h1>
-    <p>Seorang web developer yang suka bikin hal keren di internet.</p>
-  </header>
+  <aside class="sidebar">
+    <img src="assets/avatar.jpg" alt="Dika" class="avatar"/>
+    <h2>Dika</h2>
+    <p>Web Developer</p>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">Tentang</a>
+      <a href="#projects">Proyek</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </aside>
 
-  <section class="projects">
-    <div class="project fade-in">
-      <h2>Website Toko Online</h2>
-      <p>React + Firebase</p>
-    </div>
-    <div class="project fade-in">
-      <h2>Aplikasi Kasir</h2>
-      <p>Flutter + Supabase</p>
-    </div>
-    <div class="project fade-in">
-      <h2>Landing Page</h2>
-      <p>HTML + Tailwind</p>
-    </div>
-  </section>
+  <main>
+    <section id="hero" class="section hero">
+      <h1>Halo, saya <span>Dika</span></h1>
+      <p>Saya membangun situs yang <em>cantik, cepat, dan interaktif</em>.</p>
+      <a href="#projects" class="btn">Lihat Proyek</a>
+    </section>
 
-  <footer>
-    <p>© 2025 Dika. Dibuat dengan ❤️</p>
-  </footer>
+    <section id="about" class="section about">
+      <h2>Tentang Saya</h2>
+      <p>Saya... (uraikan pengalaman dan keahlian kamu).</p>
+    </section>
+
+    <section id="projects" class="section projects">
+      <h2>Proyek</h2>
+      <div class="project-grid">
+        <div class="project-card">...detail...</div>
+        <!-- ulangi 3 kartu proyek -->
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>Kontak</h2>
+      <p>Email: <a href="mailto: kamu@example.com">kamu@example.com</a></p>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
