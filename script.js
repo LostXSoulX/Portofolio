@@ -1,15 +1,27 @@
-// Animasi scroll sederhana
-const fadeElements = document.querySelectorAll('.fade-in');
+// Animasi scroll & highlight menu
+const sections = document.querySelectorAll('.section');
+const navLinks = document.querySelectorAll('.sidebar nav a');
 
-function fadeInOnScroll() {
-  fadeElements.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    const visible = window.innerHeight - 100;
-    if (top < visible) {
-      el.classList.add('show');
+function onScroll(){
+  sections.forEach(sec=>{
+    const top = sec.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      sec.classList.add('visible');
+      history.replaceState(null,null, `#${sec.id}`);
     }
+  });
+  navLinks.forEach(link=>{
+    link.classList.toggle('active', link.getAttribute('href')===location.hash);
   });
 }
 
-window.addEventListener('scroll', fadeInOnScroll);
-window.addEventListener('load', fadeInOnScroll);
+window.addEventListener('scroll', onScroll);
+window.addEventListener('load', onScroll);
+
+// Smooth scroll
+navLinks.forEach(link=>{
+  link.addEventListener('click', e=>{
+    e.preventDefault();
+    document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior:'smooth' });
+  });
+});
